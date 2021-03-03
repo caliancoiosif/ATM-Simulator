@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/milan/Downloads/jcalendar-tz-1.3.3-4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/milan/Documents/javaee.jar"/>
+	<classpathentry kind="lib" path="C:/Users/milan/Documents/javax.servlet-3.0.0.v201112011016.jar"/>
+	<classpathentry kind="lib" path="C:/Users/milan/Documents/lombok.jar"/>
+	<classpathentry kind="lib" path="C:/Users/milan/Documents/mysql-connector-java-8.0.22.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
