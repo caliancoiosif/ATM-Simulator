@@ -12,7 +12,7 @@ public class MiniStatement extends JFrame implements ActionListener{
     MiniStatement(String pin){
         super("Mini Statement");
         getContentPane().setBackground(Color.WHITE);
-        setSize(400,600);
+        setSize(400,900);
         setLocation(20,20);
         
         l1 = new JLabel();
@@ -27,7 +27,7 @@ public class MiniStatement extends JFrame implements ActionListener{
         add(l3);
         
         JLabel l4 = new JLabel();
-        l4.setBounds(20, 400, 300, 20);
+        l4.setBounds(20, 700, 300, 20);
         add(l4);
         
         try{
@@ -62,7 +62,7 @@ public class MiniStatement extends JFrame implements ActionListener{
         b1.addActionListener(this);
         
         l1.setBounds(20, 140, 400, 200);
-        b1.setBounds(20, 500, 100, 25);
+        b1.setBounds(20, 750, 100, 25);
     }
     public void actionPerformed(ActionEvent ae){
         this.setVisible(false);

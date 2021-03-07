@@ -35,9 +35,7 @@ public final class Practice {
 		return sb.toString();
 	}
 
-	
-	private char returnStrPos(double g)
-	{
+	private char returnStrPos(double g) {
 		final char str;
 
 		if (g >= 230.0) {
@@ -59,11 +57,10 @@ public final class Practice {
 		} else {
 			str = '@';
 		}
-		return str; 
+		return str;
 
 	}
 
-	
 	private char returnStrNeg(double g) {
 		final char str;
 

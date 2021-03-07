@@ -11,8 +11,8 @@ public class Transactions extends JFrame implements ActionListener {
 	JButton b1, b2, b3, b4, b5, b6, b7;
 	String pin;
 
-	Transactions(String pin) {
-		this.pin = pin;
+	Transactions(String LoginName) {
+		this.pin = LoginName;
 		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/atm.jpg"));
 		Image i2 = i1.getImage().getScaledInstance(960, 900, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
@@ -28,7 +28,7 @@ public class Transactions extends JFrame implements ActionListener {
 		b2 = new JButton("CASH WITHDRAWL");
 		b3 = new JButton("FAST CASH");
 		b4 = new JButton("MINI STATEMENT");
-		b5 = new JButton("PIN CHANGE");
+		b5 = new JButton("CHANGE PIN");
 		b6 = new JButton("BALANCE ENQUIRY");
 		b7 = new JButton("EXIT");
 		

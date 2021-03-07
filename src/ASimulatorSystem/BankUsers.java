@@ -9,11 +9,12 @@ public class BankUsers extends JFrame implements ActionListener {
 
 	JButton b1, b2;
 	JTextArea l1, l3;
+	JLabel l2;
 
 	BankUsers(String user) {
 		super("Bank Users");
 		getContentPane().setBackground(Color.WHITE);
-		setSize(400, 850);
+		setSize(500, 850);
 		setLocation(20, 20);
 
 		l1 = new JTextArea();
@@ -30,9 +31,9 @@ public class BankUsers extends JFrame implements ActionListener {
 
 		try {
 			Conn c = new Conn();
-			ResultSet rs = c.s.executeQuery("SELECT * FROM login where cardno ");
+			ResultSet rs = c.s.executeQuery("SELECT * FROM login where pin ");
 			while (rs.next()) {
-				l3.setText(l3.getText() + "  " + "Card No.: " + "    " + rs.getString("cardno") + "\n");
+				l3.setText(l3.getText() + "Password key.: " + rs.getString("pin") + "\n");
 			}
 		} catch (Exception e) {
 		}
@@ -40,9 +41,9 @@ public class BankUsers extends JFrame implements ActionListener {
 		try {
 
 			Conn c1 = new Conn();
-			ResultSet rs = c1.s.executeQuery("SELECT * FROM login where pin");
+			ResultSet rs = c1.s.executeQuery("SELECT * FROM login where cardno");
 			while (rs.next()) {
-				l1.setText(l1.getText() + "  " + "Pin Code: " + "    " + rs.getString("pin") + "\n");
+				l1.setText(l1.getText() + "Login Key.: " + rs.getString("cardno") + "\n");
 			}
 
 		} catch (Exception e) {

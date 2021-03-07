@@ -19,7 +19,7 @@ public class Signup extends JFrame implements ActionListener {
 	JDateChooser dateChooser;
 
 	Random ran = new Random();
-	long first4 = (ran.nextLong() % 9000L) + 1000L;
+	long first4 = (ran.nextLong() % 90000L) + 10000L;
 	String first = "" + Math.abs(first4);
 
 	Signup() {
@@ -27,14 +27,14 @@ public class Signup extends JFrame implements ActionListener {
 		setTitle("NEW ACCOUNT APPLICATION FORM");
 
 		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/logo.jpg"));
-		Image i2 = i1.getImage().getScaledInstance(140, 140, Image.SCALE_DEFAULT);
+		Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel l11 = new JLabel(i3);
-		l11.setBounds(20, 0, 140, 140);
+		l11.setBounds(20, 0, 100, 100);
 		add(l11);
 
 		l1 = new JLabel("APPLICATION FORM NO. " + first);
-		l1.setFont(new Font("Raleway", Font.BOLD, 40));
+		l1.setFont(new Font("Raleway", Font.BOLD, 38));
 
 		l2 = new JLabel("Page 1: Personal Details");
 		l2.setFont(new Font("Raleway", Font.BOLD, 22));
@@ -42,7 +42,7 @@ public class Signup extends JFrame implements ActionListener {
 		l3 = new JLabel("Name:");
 		l3.setFont(new Font("Raleway", Font.BOLD, 20));
 
-		l4 = new JLabel("Father's Name:");
+		l4 = new JLabel("Last Name:");
 		l4.setFont(new Font("Raleway", Font.BOLD, 20));
 
 		l5 = new JLabel("Date of Birth:");
@@ -63,7 +63,7 @@ public class Signup extends JFrame implements ActionListener {
 		l10 = new JLabel("City:");
 		l10.setFont(new Font("Raleway", Font.BOLD, 20));
 
-		l11 = new JLabel("Pin Code:");
+		l11 = new JLabel("Post Code :");
 		l11.setFont(new Font("Raleway", Font.BOLD, 20));
 
 		l12 = new JLabel("State:");
@@ -140,7 +140,7 @@ public class Signup extends JFrame implements ActionListener {
 		add(dateChooser);
 
 		setLayout(null);
-		l1.setBounds(160, 20, 600, 40);
+		l1.setBounds(140, 20, 600, 40);
 		add(l1);
 
 		l2.setBounds(290, 80, 600, 30);
@@ -251,7 +251,7 @@ public class Signup extends JFrame implements ActionListener {
 
 		String address = t4.getText();
 		String city = t5.getText();
-		String pincode = t6.getText();
+		String postcode = t6.getText();
 		String state = t7.getText();
 
 		try {
@@ -261,7 +261,7 @@ public class Signup extends JFrame implements ActionListener {
 			} else {
 				Conn c1 = new Conn();
 				String q1 = "insert into signup values('" + formno + "','" + name + "','" + fname + "','" + dob + "','"
-						+ gender + "','" + email + "','" + marital + "','" + address + "','" + city + "','" + pincode
+						+ gender + "','" + email + "','" + marital + "','" + address + "','" + city + "','" + postcode
 						+ "','" + state + "')";
 				c1.s.executeUpdate(q1);
 

@@ -13,7 +13,7 @@ public class FastCash extends JFrame implements ActionListener {
 	JTextField t1;
 	String pin;
 
-	FastCash(String pin) {
+	FastCash(String LoginName) {
 		this.pin = pin;
 		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/atm.jpg"));
 		Image i2 = i1.getImage().getScaledInstance(960, 900, Image.SCALE_DEFAULT);
@@ -77,19 +77,20 @@ public class FastCash extends JFrame implements ActionListener {
 
 	public void actionPerformed(ActionEvent ae) {
 		try {
-			String amount = ((JButton) ae.getSource()).getText().substring(3); // k
+			String amount = ((JButton) ae.getSource()).getText().substring(4); 
 			Conn c = new Conn();
 			ResultSet rs = c.s.executeQuery("select * from bank where pin = '" + pin + "'");
 			int balance = 0;
 			while (rs.next()) {
 				if (rs.getString("mode").equals("Deposit")) {
-					balance += Integer.parseInt(rs.getString("amount"));
+					balance += Integer.parseInt(rs.getString("amount").replaceAll("\\s+",""));
 				} else {
-					balance -= Integer.parseInt(rs.getString("amount"));
+					balance -= Integer.parseInt(rs.getString("amount").replaceAll("\\s+",""));
 				}
 			}
 			String num = "17";
-			if (ae.getSource() != b7 && balance < Integer.parseInt(amount)) {
+			
+			if (ae.getSource() != b7 && balance < Integer.parseInt(amount.replaceAll("\\s+",""))) {
 				JOptionPane.showMessageDialog(null, "Insuffient Balance");
 				return;
 			}

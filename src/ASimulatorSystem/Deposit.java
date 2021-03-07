@@ -16,10 +16,10 @@ public class Deposit extends JFrame implements ActionListener {
 	Deposit(String pin) {
 		this.pin = pin;
 		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/atm.jpg"));
-		Image i2 = i1.getImage().getScaledInstance(960, 900, Image.SCALE_DEFAULT);
+		Image i2 = i1.getImage().getScaledInstance(1000, 1180, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel l3 = new JLabel(i3);
-		l3.setBounds(0, 0, 960, 900);
+		l3.setBounds(0, 0, 960, 1080);
 		add(l3);
 
 		l1 = new JLabel("ENTER AMOUNT YOU WANT TO DEPOSIT");
@@ -34,22 +34,22 @@ public class Deposit extends JFrame implements ActionListener {
 
 		setLayout(null);
 
-		l1.setBounds(190, 240, 400, 35);
+		l1.setBounds(190, 350, 400, 35);
 		l3.add(l1);
 
-		t1.setBounds(190, 310, 320, 25);
+		t1.setBounds(190, 420, 320, 25);
 		l3.add(t1);
 
-		b1.setBounds(390, 478, 150, 35);
+		b1.setBounds(390, 588, 150, 35);
 		l3.add(b1);
 
-		b2.setBounds(390, 523, 150, 35);
+		b2.setBounds(390, 633, 150, 35);
 		l3.add(b2);
 
 		b1.addActionListener(this);
 		b2.addActionListener(this);
 
-		setSize(960, 900);
+		setSize(960, 1080);
 		setUndecorated(true);
 		setLocation(500, 0);
 		setVisible(true);

@@ -18,10 +18,10 @@ public class Signup2 extends JFrame implements ActionListener {
 	Signup2(String formno) {
 
 		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/logo.jpg"));
-		Image i2 = i1.getImage().getScaledInstance(140, 100, Image.SCALE_DEFAULT);
+		Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel l14 = new JLabel(i3);
-		l14.setBounds(150, 0, 140, 100);
+		l14.setBounds(150, 0, 100, 100);
 		add(l14);
 
 		this.formno = formno;
@@ -48,10 +48,10 @@ public class Signup2 extends JFrame implements ActionListener {
 		l6 = new JLabel("Occupation:");
 		l6.setFont(new Font("Raleway", Font.BOLD, 18));
 
-		l7 = new JLabel("ID Number:");
+		l7 = new JLabel("Personal ID :");
 		l7.setFont(new Font("Raleway", Font.BOLD, 18));
 
-		l8 = new JLabel("ID Personal Number:");
+		l8 = new JLabel("Login ID.:");
 		l8.setFont(new Font("Raleway", Font.BOLD, 18));
 
 		l9 = new JLabel("Senior Citizen:");
@@ -126,7 +126,7 @@ public class Signup2 extends JFrame implements ActionListener {
 		l13.setBounds(760, 10, 60, 30);
 		add(l13);
 
-		l1.setBounds(310, 30, 600, 40);
+		l1.setBounds(280, 30, 600, 40);
 		add(l1);
 
 		l2.setBounds(100, 120, 100, 30);
@@ -211,8 +211,8 @@ public class Signup2 extends JFrame implements ActionListener {
 		String education = (String) c4.getSelectedItem();
 		String occupation = (String) c5.getSelectedItem();
 
-		String IDseries = t1.getText();
-		String IDnumber = t2.getText();
+		String LoginId = t1.getText();
+		String IDNo = t2.getText();
 
 		String scitizen = "";
 		if (r1.isSelected()) {
@@ -234,7 +234,7 @@ public class Signup2 extends JFrame implements ActionListener {
 			} else {
 				Conn c1 = new Conn();
 				String q1 = "insert into signup2 values('" + formno + "','" + religion + "','" + WorkingField + "','"
-						+ income + "','" + education + "','" + occupation + "','" + IDseries + "','" + IDnumber + "','"
+						+ income + "','" + education + "','" + occupation + "','" + LoginId + "','" + IDNo + "','"
 						+ scitizen + "','" + eaccount + "')";
 				c1.s.executeUpdate(q1);
 

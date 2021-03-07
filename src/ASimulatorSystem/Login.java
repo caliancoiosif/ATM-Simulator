@@ -26,7 +26,7 @@ public class Login extends JFrame implements ActionListener {
 		l1.setBounds(200, 40, 450, 40);
 		add(l1);
 
-		l2 = new JLabel("Card No.:");
+		l2 = new JLabel("Login key:");
 		l2.setFont(new Font("Raleway", Font.BOLD, 28));
 		l2.setBounds(125, 150, 375, 30);
 		add(l2);
@@ -36,7 +36,7 @@ public class Login extends JFrame implements ActionListener {
 		tf1.setFont(new Font("Arial", Font.BOLD, 14));
 		add(tf1);
 
-		l3 = new JLabel("Pin Code:");
+		l3 = new JLabel("Password:");
 		l3.setFont(new Font("Raleway", Font.BOLD, 28));
 		l3.setBounds(125, 220, 375, 30);
 		add(l3);
@@ -88,14 +88,15 @@ public class Login extends JFrame implements ActionListener {
 		try {
 			if (ae.getSource() == b1) {
 				Conn c1 = new Conn();
-                String cardno  = tf1.getText();
-                String pin  = pf2.getText();
-                String q  = "select * from login where cardno = '"+cardno+"' and pin = '"+pin+"'";
+				String cardno = tf1.getText();
+				String pin = pf2.getText();
+				String q = "select * from login where cardno = '" + cardno + "' and pin = '" + pin + "'";
 
-                ResultSet rs = c1.s.executeQuery(q);
-                if(rs.next()){
-                    setVisible(false);
-                    new Transactions(pin).setVisible(true);
+				ResultSet rs = c1.s.executeQuery(q);
+
+				if (rs.next()) {
+					setVisible(false);
+					new Transactions(pin).setVisible(true);
 				} else {
 					JOptionPane.showMessageDialog(null, "Incorrect Login or Password ");
 				}
@@ -109,7 +110,7 @@ public class Login extends JFrame implements ActionListener {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
